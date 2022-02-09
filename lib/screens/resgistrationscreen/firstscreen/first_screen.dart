@@ -3,11 +3,14 @@ import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:taillz/Api%20Services/api_services.dart';
 import 'package:taillz/Localization/localization_service.dart';
 import 'package:taillz/Localization/t_keys.dart';
 import 'package:taillz/passwordrecovery/passwordrecovery.dart';
 import 'package:taillz/screens/mainScreen.dart';
 import 'package:taillz/screens/resgistrationscreen/firstscreen/Components/customtextfiled.dart';
+import 'package:taillz/screens/resgistrationscreen/firstscreen/Login%20Api%20Service/api_service.dart';
+import 'package:taillz/screens/resgistrationscreen/firstscreen/Login%20Api%20Service/login_model.dart';
 import 'package:taillz/screens/resgistrationscreen/sceondscreen/secondscreen.dart';
 
 class FirstScreen extends StatefulWidget {
@@ -21,10 +24,19 @@ class FirstScreen extends StatefulWidget {
 
 class _FirstScreenState extends State<FirstScreen> {
   final localizationcontroller = Get.find<LocalizationController>();
+  final loginapi = Get.put(ApiServicesController());
 
   TextEditingController emailcontroller = TextEditingController();
 
   TextEditingController passwordcontroller = TextEditingController();
+  LoginRequestModel requestModel;
+  bool isloading = false;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    requestModel = new LoginRequestModel();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -119,10 +131,27 @@ class _FirstScreenState extends State<FirstScreen> {
                       final bool isValid =
                           EmailValidator.validate(emailcontroller.text.trim());
                       if (isValid && passwordcontroller.text.isNotEmpty) {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => MainScreen()));
+                        requestModel.email = emailcontroller.text;
+                        requestModel.password = passwordcontroller.text;
+                        isloading = true;
+                        if (isloading) {
+                          progress();
+                        }
+                        loginapi.login(requestModel).then((value) {
+                          setState(() {
+                            print("Login fail");
+                          });
+                          if (value.token.isNotEmpty) {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => MainScreen()));
+                          } else {
+                            SnackBar(content: Text(value.error));
+                          }
+                        });
+
+                        print(requestModel.tojson());
                       } else if (emailcontroller.text.isEmpty) {
                         showflushbar(
                           context,
@@ -230,5 +259,10 @@ class _FirstScreenState extends State<FirstScreen> {
       flushbarPosition: FlushbarPosition.TOP,
       duration: Duration(milliseconds: 1500),
     )..show(context);
+  }
+
+  //progress indicatior
+  progress() {
+    Center(child: CircularProgressIndicator());
   }
 }
