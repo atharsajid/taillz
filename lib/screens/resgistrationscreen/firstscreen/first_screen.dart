@@ -131,27 +131,35 @@ class _FirstScreenState extends State<FirstScreen> {
                       final bool isValid =
                           EmailValidator.validate(emailcontroller.text.trim());
                       if (isValid && passwordcontroller.text.isNotEmpty) {
-                        requestModel.email = emailcontroller.text;
-                        requestModel.password = passwordcontroller.text;
-                        isloading = true;
-                        if (isloading) {
-                          progress();
-                        }
-                        loginapi.login(requestModel).then((value) {
-                          setState(() {
-                            print("Login fail");
-                          });
-                          if (value.token.isNotEmpty) {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => MainScreen()));
-                          } else {
-                            SnackBar(content: Text(value.error));
-                          }
-                        });
+                        // requestModel.email = emailcontroller.text;
+                        // requestModel.password = passwordcontroller.text;
 
-                        print(requestModel.tojson());
+                        // isloading = true;
+                        // if (isloading) {
+                        //   progress();
+                        // }
+                        // loginapi.login(requestModel, context).then((value) {
+                        //   setState(() {
+                        //     Get.dialog(Center(
+                        //       child: CircularProgressIndicator(),
+                        //     ));
+                        //   });
+                        //   if (value.token.isNotEmpty) {
+                        //     Navigator.push(
+                        //         context,
+                        //         MaterialPageRoute(
+                        //             builder: (context) => MainScreen()));
+                        //   } else {
+                        //     showflushbar(context, value.error);
+                        //   }
+                        // });
+
+                        // print(requestModel.tojson());
+
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MainScreen()));
                       } else if (emailcontroller.text.isEmpty) {
                         showflushbar(
                           context,
