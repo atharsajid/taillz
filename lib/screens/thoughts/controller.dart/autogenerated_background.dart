@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
 class AutoGenBackground extends GetxController {
-  int index = 1;
+  int index = 0;
   generate() {
     if (index >= 2) {
       index = 0;

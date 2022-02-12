@@ -46,9 +46,9 @@ class _MainScreenState extends State<MainScreen> {
             elevation: 0,
             // systemOverlayStyle: SystemUiOverlayStyle(statusBarColor: Colors.orange),
             bottom: TabBar(
-              onTap: (value) {
-                generatecontroller.generate();
-              },
+              // onTap: (value) {
+              //   generatecontroller.generate();
+              // },
               isScrollable: true,
               indicator: BoxDecoration(),
               labelStyle: GoogleFonts.montserrat(

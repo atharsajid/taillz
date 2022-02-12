@@ -12,7 +12,8 @@ class CustomNextButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsetsDirectional.only(),
-      height: 40,
+      height: 35,
+      
       decoration: BoxDecoration(
         color: Color(0xff121556),
         borderRadius: BorderRadius.circular(28),

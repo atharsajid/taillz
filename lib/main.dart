@@ -1,10 +1,17 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:taillz/screens/splash/splashScreen.dart';
 import 'Localization/localization_service.dart';
 
 void main() async {
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    statusBarBrightness: Brightness.dark,
+    statusBarIconBrightness: Brightness.dark,
+    statusBarColor: Colors.transparent
+    
+  ));
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
   /*SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(

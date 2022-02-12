@@ -24,9 +24,9 @@ class CustomTextFormFiled extends StatelessWidget {
         Expanded(
           child: Padding(
             padding: const EdgeInsetsDirectional.only(
-                start: 20, end: 20,),
+                start: 35, end: 35,),
             child: Container(
-              height: 55,
+              height: 51,
               child: TextFormField(
                 
                 style: TextStyle(color: Colors.black,fontSize: 14),
@@ -94,9 +94,9 @@ class CustomEmailTextFormFiled extends StatelessWidget {
         Expanded(
           child: Padding(
             padding: const EdgeInsetsDirectional.only(
-                start: 20, end: 20,),
+                start: 35, end: 35,),
             child: Container(
-              height: 55,
+              height: 51,
               child: TextFormField(
                 keyboardType: TextInputType.text,
                 style: TextStyle(color: Colors.black,fontSize: 14),

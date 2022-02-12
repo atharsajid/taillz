@@ -150,7 +150,7 @@ class _ThirdScreenState extends State<ThirdScreen> {
             Text(
               TKeys.nick_name_in.translate(context),
               style: GoogleFonts.montserrat(
-                fontSize: 16,
+                fontSize: 15,
                 color: Color(0xff121556),
               ),
             ),
@@ -168,11 +168,11 @@ class _ThirdScreenState extends State<ThirdScreen> {
               obsecure: false,
             ),
             SizedBox(
-              height: 20,
+              height: 15,
             ),
             //Gender Selection
             Container(
-              margin: EdgeInsets.only(left: 20, right: 20, top: 6, bottom: 4),
+              margin: EdgeInsets.only(left: 35, right: 35,),
               padding: EdgeInsets.symmetric(horizontal: 15),
               decoration: BoxDecoration(
                   border: Border.all(
@@ -211,11 +211,11 @@ class _ThirdScreenState extends State<ThirdScreen> {
               ),
             ),
             SizedBox(
-              height: 20,
+              height: 15,
             ),
             //Date of Birth year selection
             Container(
-              margin: EdgeInsets.only(left: 20, right: 20, top: 6, bottom: 4),
+              margin: EdgeInsets.only(left: 35, right: 35,),
               padding: EdgeInsets.symmetric(horizontal: 15),
               decoration: BoxDecoration(
                   border: Border.all(
@@ -254,12 +254,12 @@ class _ThirdScreenState extends State<ThirdScreen> {
               ),
             ),
             SizedBox(
-              height: 20,
+              height: 15,
             ),
 
             //Country Selection
             Container(
-              margin: EdgeInsets.only(left: 20, right: 20, top: 6, bottom: 4),
+              margin: EdgeInsets.only(left: 35, right: 35, ),
               padding: EdgeInsets.symmetric(horizontal: 15),
               decoration: BoxDecoration(
                   border: Border.all(
@@ -298,12 +298,12 @@ class _ThirdScreenState extends State<ThirdScreen> {
               ),
             ),
             SizedBox(
-              height: 20,
+              height: 15,
             ),
 
             //Language Selection
             Container(
-              margin: EdgeInsets.only(left: 20, right: 20, top: 6, bottom: 4),
+              margin: EdgeInsets.only(left: 35, right: 35,),
               padding: EdgeInsets.symmetric(horizontal: 15),
               decoration: BoxDecoration(
                   border: Border.all(

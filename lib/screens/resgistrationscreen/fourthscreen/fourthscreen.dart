@@ -76,7 +76,7 @@ class _FourthScreenState extends State<FourthScreen> {
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: 15,
               ),
               CustomTextFormFiled(
                 hintText: TKeys.Email_text.translate(context),
@@ -88,7 +88,7 @@ class _FourthScreenState extends State<FourthScreen> {
                 controller: emailcontroller,
               ),
               SizedBox(
-                height: 20,
+                height: 15,
               ),
               CustomTextFormFiled(
                 controller: passwordcontroller,
@@ -100,20 +100,22 @@ class _FourthScreenState extends State<FourthScreen> {
                 obsecure: true,
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 23, top: 10, right: 23),
+                padding: const EdgeInsets.only(left: 35, top: 10, right: 35),
                 child: Container(
                   child: Text(
                     TKeys.uniquepassword.translate(context),
+                    textAlign: TextAlign.justify,
                     style: GoogleFonts.montserrat(
                         fontSize: 14, color: Colors.black),
                   ),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 23, top: 10, right: 23),
+                padding: const EdgeInsets.only(left: 35, top: 10, right: 35),
                 child: Container(
                   child: Text(
                     TKeys.signup_line_1.translate(context),
+                    textAlign: TextAlign.justify,
                     style: GoogleFonts.montserrat(
                       fontSize: 14,
                     ),

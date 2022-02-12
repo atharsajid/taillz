@@ -68,18 +68,10 @@ class _PersonalScreenState extends State<PersonalScreen>
               labelColor: Color(0xff19334D),
               unselectedLabelColor: Color(0xff19334D),
               tabs: [
-                Tab(
-                  text: TKeys.published_text.translate(context)
-                ),
-                Tab(
-                  text: TKeys.drafts_text.translate(context)
-                ),
-                Tab(
-                  text: TKeys.pending_text.translate(context)
-                ),
-                Tab(
-                  text:TKeys.declined_text.translate(context)
-                ),
+                Tab(text: TKeys.published_text.translate(context)),
+                Tab(text: TKeys.drafts_text.translate(context)),
+                Tab(text: TKeys.pending_text.translate(context)),
+                Tab(text: TKeys.declined_text.translate(context)),
               ],
               controller: _tabController,
               // indicatorSize: TabBarIndicatorSize.tab,
@@ -256,14 +248,16 @@ class _PostStoryState extends State<PostStory> {
                             itemBuilder: (context) {
                               return <PopupMenuEntry<int>>[
                                 PopupMenuItem(
-                                    child: Text(TKeys.delete_post.translate(context)),
+                                    child: Text(
+                                        TKeys.delete_post.translate(context)),
                                     value: 0),
                                 PopupMenuItem(
-                                    child: Text(TKeys.edit_post.translate(context)),
+                                    child: Text(
+                                        TKeys.edit_post.translate(context)),
                                     value: 2),
                                 PopupMenuItem(
-                                    child:
-                                        Text(TKeys.disable_comment.translate(context)),
+                                    child: Text(TKeys.disable_comment
+                                        .translate(context)),
                                     value: 2),
                               ];
                             },
@@ -314,7 +308,7 @@ class _PostStoryState extends State<PostStory> {
             ),
           ),
           Container(
-            margin: EdgeInsets.symmetric(vertical: 5, horizontal: 14),
+            margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -351,16 +345,20 @@ class _PostStoryState extends State<PostStory> {
                     )
                   ],
                 ),
-                Text(
-                  "this is a sample story this is a sample\n"
-                  "this is a sample story this is a sample\n"
-                  "this is a sample story this is a sample\n"
-                  "this is a sample story this is a sample\n"
-                  "this is a sample story this is a sample",
-                  style: TextStyle(
-                      fontSize: 13,
-                      fontFamily: Constant.fontFamilyName,
-                      color: Colors.black),
+                Padding(
+                  padding: EdgeInsets.only(right: 25),
+                  child: Text(
+                    "this is a sample story this is a sample "
+                    "this is a sample story this is a sample "
+                    "this is a sample story this is a sample "
+                    "this is a sample story this is a sample "
+                    "this is a sample story this is a sample ",
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(
+                        fontSize: 13,
+                        fontFamily: Constant.fontFamilyName,
+                        color: Colors.black),
+                  ),
                 ),
                 Text(
                   "read more",
@@ -458,7 +456,7 @@ class _PostStoryState extends State<PostStory> {
                       children: [
                         GestureDetector(
                           child: Text(
-                          TKeys.comment_text.translate(context),
+                            TKeys.comment_text.translate(context),
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 14,
@@ -489,7 +487,7 @@ class _PostStoryState extends State<PostStory> {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => CommentScreen()));
             },
-            child: Card(elevation: 0, child: userComment()),
+            child: userComment(),
           ),
         ],
       ),
@@ -497,98 +495,99 @@ class _PostStoryState extends State<PostStory> {
   }
 
   Widget userComment() {
-    return Padding(
-      padding: const EdgeInsetsDirectional.only(start: 7, end: 7, bottom: 25),
-      child: Container(
-        decoration: BoxDecoration(
-            color: Constant.commentBackgroundColor,
-            borderRadius: BorderRadius.circular(8)),
-        child: Padding(
-          padding: const EdgeInsetsDirectional.all(5.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              AvatarView(
-                radius: 16,
-                avatarType: AvatarType.CIRCLE,
-                imagePath: "assets/images/user_profile.png",
-              ),
-              Expanded(
-                flex: 1,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Text(
-                            "Nick name",
-                            style: TextStyle(
-                              fontSize: 14,
-                              color: Constant.textTitleColor,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: Constant.fontFamilyName,
-                            ),
+    return Container(
+      margin: EdgeInsets.only(top: 5),
+      decoration: BoxDecoration(
+          color: Constant.commentBackgroundColor,
+          borderRadius: BorderRadius.circular(8)),
+      child: Padding(
+        padding: const EdgeInsetsDirectional.all(8.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            AvatarView(
+              radius: 16,
+              avatarType: AvatarType.CIRCLE,
+              imagePath: "assets/images/user_profile.png",
+            ),
+            Expanded(
+              flex: 1,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          "Nick name",
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Constant.textTitleColor,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: Constant.fontFamilyName,
                           ),
-                          SizedBox(
-                            width: 4,
-                          ),
-                          Text(
-                            "10/30/2021",
-                            style: TextStyle(
-                              fontSize: 13,
-                              color: Constant.commentDateColor,
-                              fontWeight: FontWeight.normal,
-                              fontFamily: Constant.fontFamilyName,
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 4,
-                      ),
-                      Text(
-                          "This is comment This is comment\n"
-                          "This is comment This is comment\n"
-                          "This is comment This is comment",
+                        ),
+                        SizedBox(
+                          width: 4,
+                        ),
+                        Text(
+                          "10/30/2021",
                           style: TextStyle(
                             fontSize: 13,
-                            color: Colors.black,
+                            color: Constant.commentDateColor,
                             fontWeight: FontWeight.normal,
                             fontFamily: Constant.fontFamilyName,
-                          )),
-                      SizedBox(
-                        height: 4,
-                      ),
-                    ],
-                  ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 4,
+                    ),
+                    Text(
+                        "This is comment This is comment "
+                        "This is comment This is comment "
+                        "This is comment This is comment",
+                        textAlign: TextAlign.justify,
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: Colors.black,
+                          fontWeight: FontWeight.normal,
+                          fontFamily: Constant.fontFamilyName,
+                        )),
+                    SizedBox(
+                      height: 4,
+                    ),
+                  ],
                 ),
               ),
-              PopupMenuButton<int>(
-                child: Container(
-                  padding: EdgeInsetsDirectional.only(
-                    start: 10,
-                  ),
-                  height: 36,
-                  width: 48,
-                  child: Icon(
-                    Icons.more_vert,
-                    color: Constant.vertIconColor,
-                  ),
+            ),
+            PopupMenuButton<int>(
+              child: Container(
+                padding: EdgeInsetsDirectional.only(
+                  start: 10,
                 ),
-                itemBuilder: (context) {
-                  return <PopupMenuEntry<int>>[
-                    PopupMenuItem(
-                        child: Text(TKeys.delete_comment.translate(context)), value: 0),
-                    PopupMenuItem(
-                        child: Text(TKeys.report_block.translate(context)), value: 2),
-                  ];
-                },
+                height: 36,
+                width: 48,
+                child: Icon(
+                  Icons.more_vert,
+                  color: Constant.vertIconColor,
+                ),
               ),
-            ],
-          ),
+              itemBuilder: (context) {
+                return <PopupMenuEntry<int>>[
+                  PopupMenuItem(
+                      child: Text(TKeys.delete_comment.translate(context)),
+                      value: 0),
+                  PopupMenuItem(
+                      child: Text(TKeys.report_block.translate(context)),
+                      value: 2),
+                ];
+              },
+            ),
+          ],
         ),
       ),
     );

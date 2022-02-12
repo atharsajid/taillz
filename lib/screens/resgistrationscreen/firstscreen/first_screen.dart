@@ -3,7 +3,7 @@ import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:taillz/Api%20Services/api_services.dart';
+
 import 'package:taillz/Localization/localization_service.dart';
 import 'package:taillz/Localization/t_keys.dart';
 import 'package:taillz/passwordrecovery/passwordrecovery.dart';
@@ -24,19 +24,13 @@ class FirstScreen extends StatefulWidget {
 
 class _FirstScreenState extends State<FirstScreen> {
   final localizationcontroller = Get.find<LocalizationController>();
-  final loginapi = Get.put(ApiServicesController());
+
 
   TextEditingController emailcontroller = TextEditingController();
 
   TextEditingController passwordcontroller = TextEditingController();
-  LoginRequestModel requestModel;
-  bool isloading = false;
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    requestModel = new LoginRequestModel();
-  }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -79,20 +73,20 @@ class _FirstScreenState extends State<FirstScreen> {
                 ],
               ),
               Container(
-                padding: EdgeInsets.only(top: 70),
+                padding: EdgeInsets.only(top: 50),
                 child: Image.asset(
                   'assets/images/LogoIcon.png',
-                  height: 120,
+                  height: 110,
                   fit: BoxFit.cover,
                 ),
               ),
               Container(
-                padding: EdgeInsets.only(top: 25),
+                padding: EdgeInsets.only(top: 15),
                 child: Text(
                   TKeys.Anonymous_world.translate(context),
                   style: GoogleFonts.openSans(
-                    fontSize: 19,
-                    fontWeight: FontWeight.w900,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w800,
                     color: Color(0xff121556),
                   ),
                 ),
@@ -117,9 +111,9 @@ class _FirstScreenState extends State<FirstScreen> {
               ),
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                    const EdgeInsets.only(top:15,bottom: 7, left:65,right: 65),
                 child: Container(
-                  height: 50,
+                  height: 45,
                   decoration: BoxDecoration(
                     color: Color(0xff121556),
                     borderRadius: BorderRadius.circular(32),
@@ -131,31 +125,7 @@ class _FirstScreenState extends State<FirstScreen> {
                       final bool isValid =
                           EmailValidator.validate(emailcontroller.text.trim());
                       if (isValid && passwordcontroller.text.isNotEmpty) {
-                        // requestModel.email = emailcontroller.text;
-                        // requestModel.password = passwordcontroller.text;
-
-                        // isloading = true;
-                        // if (isloading) {
-                        //   progress();
-                        // }
-                        // loginapi.login(requestModel, context).then((value) {
-                        //   setState(() {
-                        //     Get.dialog(Center(
-                        //       child: CircularProgressIndicator(),
-                        //     ));
-                        //   });
-                        //   if (value.token.isNotEmpty) {
-                        //     Navigator.push(
-                        //         context,
-                        //         MaterialPageRoute(
-                        //             builder: (context) => MainScreen()));
-                        //   } else {
-                        //     showflushbar(context, value.error);
-                        //   }
-                        // });
-
-                        // print(requestModel.tojson());
-
+                    
                         Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -207,7 +177,7 @@ class _FirstScreenState extends State<FirstScreen> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                margin: EdgeInsets.symmetric(horizontal: 65, vertical: 7),
                 height: 50,
                 width: double.infinity,
                 decoration: BoxDecoration(
@@ -270,7 +240,5 @@ class _FirstScreenState extends State<FirstScreen> {
   }
 
   //progress indicatior
-  progress() {
-    Center(child: CircularProgressIndicator());
-  }
+ 
 }

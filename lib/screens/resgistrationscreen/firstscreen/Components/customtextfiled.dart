@@ -20,7 +20,7 @@ class _CustomTextFiledState extends State<CustomTextFiled> {
   Widget build(BuildContext context) {
     return Expanded(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 7),
         child: Container(
           decoration: BoxDecoration(
               // // boxShadow: [
