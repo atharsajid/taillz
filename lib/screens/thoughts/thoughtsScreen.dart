@@ -30,44 +30,48 @@ class _ThoughtsScreenState extends State<ThoughtsScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: GetBuilder<AutoGenBackground>(
-        builder: (controller) {
-          return Stack(
-            children: [
-              Container(
-                color: Colors.white,
-                child:
-                    // ListView.builder(
-                    //   itemCount: 1,
-                    //   itemBuilder: (context, i) {
-                    //     return
-                    itemDesign(list[0]),
-                // return new Text(list[i]);
-              ),
-              Padding(
-                padding: EdgeInsets.all(16),
-                child: Align(
-                  alignment: Alignment.bottomLeft,
-                  child: FloatingActionButton(
-                    backgroundColor: Color(0xff19334D),
-                    onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (builder) => CreatePost()));
-                    },
-                    child: Icon(
-                      Icons.add,
-                    ),
+      child: (Stack(
+        children: [
+          SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
+            child: Container(
+              color: Colors.white,
+              child: Column(
+                children: [
+                  itemDesign(list[0],"assets/icons/female/1.png"),
+                  SizedBox(
+                    height: 20,
                   ),
+                  itemDesign(list[1],"assets/icons/male/3.png"),
+                  SizedBox(
+                    height: 20,
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(16),
+            child: Align(
+              alignment: Alignment.bottomLeft,
+              child: FloatingActionButton(
+                backgroundColor: Color(0xff19334D),
+                onPressed: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (builder) => CreatePost()));
+                },
+                child: Icon(
+                  Icons.add,
                 ),
-              )
-            ],
-          );
-        },
-      ),
+              ),
+            ),
+          )
+        ],
+      )),
     );
   }
 
-  Widget itemDesign(String item) {
+  Widget itemDesign(String item,String image) {
     return Card(
       elevation: 0,
       //4
@@ -131,7 +135,7 @@ class _ThoughtsScreenState extends State<ThoughtsScreen> {
                               borderWidth: 2,
                               borderColor: Colors.white,
                               avatarType: AvatarType.CIRCLE,
-                              imagePath: "assets/images/user_profile.png",
+                              imagePath: image,
                             ),
                             Padding(
                               padding:
@@ -246,7 +250,9 @@ class _ThoughtsScreenState extends State<ThoughtsScreen> {
                   height: 6,
                 ),
                 Padding(
-                  padding: EdgeInsets.only(right: 25),
+                  padding: localizationscontroller.directionRTL
+                      ? EdgeInsets.only(left: 25)
+                      : EdgeInsets.only(right: 25),
                   child: Text(
                     "this is a sample story this is a sample "
                     "this is a sample story this is a sample "
@@ -398,8 +404,7 @@ class _ThoughtsScreenState extends State<ThoughtsScreen> {
     return Container(
       margin: EdgeInsets.only(top: 5),
       decoration: BoxDecoration(
-           color: Constant.commentBackgroundColor,
-        
+          color: Constant.commentBackgroundColor,
           borderRadius: BorderRadius.circular(8)),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -407,8 +412,6 @@ class _ThoughtsScreenState extends State<ThoughtsScreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            
-            
             AvatarView(
               radius: 16,
               avatarType: AvatarType.CIRCLE,

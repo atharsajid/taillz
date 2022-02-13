@@ -1,5 +1,5 @@
 {
-  "Anonymous_world":"כל מה שאמיתי בחיים",
+  "Anonymous_world": "כל מה שאמיתי בחיים",
   "Email_Address": "כתובת מייל",
   "Password_text": "סיסמה",
   "Login_text": "התחברות",
@@ -235,25 +235,25 @@
   "following": "אני עוקב",
   "remove_follower": "Remove Follower",
   "report_block": "דווח/לחסום",
-  "delete_post":"מחיקת פוסט",
-  "edit_post":"עריכת פוסט",
-  "disable_comment":"חסימת תגובות",
-  "delete_comment":"מחיקת תגובה",
-  "follow":"לעקוב",
-  "all_thoughts":"כל הסיפורים",
-  "minimum_for_personal":"המינימום לסיפור אישי הוא 300 תווים",
-  "title_should":"כותרת תהיה בין 5 ל 25 תווים",
-  "delete_conversion":"מחיקת שיחה",
-  "report_User":"Report User",
-  "block_User":"Block User",
-  "nickname_shouldbe":"כינוי יהיה בין 6 ל 12 תווים, באנגלית, ללא רווחים",
-  "nick_name":"Flower1990",
-  "resetpassword":"הבקשה נשלחה, יש לבדוק מייל",
-  "typing":"להתחיל כאן...",
-  "minimum_for_post":"מינימום לכתיבת פוסט 25 תווים"
-
-
-
-
-
+  "delete_post": "מחיקת פוסט",
+  "edit_post": "עריכת פוסט",
+  "disable_comment": "חסימת תגובות",
+  "delete_comment": "מחיקת תגובה",
+  "follow": "לעקוב",
+  "all_thoughts": "כל הסיפורים",
+  "minimum_for_personal": "המינימום לסיפור אישי הוא 300 תווים",
+  "title_should": "כותרת תהיה בין 5 ל 25 תווים",
+  "delete_conversion": "מחיקת שיחה",
+  "report_User": "Report User",
+  "block_User": "Block User",
+  "nickname_shouldbe": "כינוי יהיה בין 6 ל 12 תווים, באנגלית, ללא רווחים",
+  "nick_name": "Flower1990",
+  "resetpassword": "הבקשה נשלחה, יש לבדוק מייל",
+  "typing": "להתחיל כאן...",
+  "minimum_for_post": "מינימום לכתיבת פוסט 25 תווים",
+  "please_select_reason": "Please select reason for reporting",
+  "hate_speech":"Hate speech, bullying, shamming",
+  "spamming_terror":"Spamming, terror, False info",
+  "report_and_block":"Report and Block",
+  "report":"Report"
 }

@@ -9,6 +9,7 @@ import 'package:taillz/enddrawer/privacypolicy/privacypolicy.dart';
 import 'package:taillz/enddrawer/termsofuse/termsofuse.dart';
 import 'package:taillz/inboxscreen/inboxscreen.dart';
 import 'package:taillz/notifications/notification.dart';
+import 'package:taillz/screens/Blocked%20Users/block_user.dart';
 import 'package:taillz/screens/consult/consultScreen.dart';
 import 'package:taillz/screens/follower/follower.dart';
 import 'package:taillz/screens/karma/karma_sceen.dart';
@@ -229,7 +230,12 @@ class _MainScreenState extends State<MainScreen> {
                       ),
                     )),
                 TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => BlockedUser()));
+                    },
                     child: Text(
                       TKeys.Blocked_user.translate(context),
                       style: GoogleFonts.montserrat(

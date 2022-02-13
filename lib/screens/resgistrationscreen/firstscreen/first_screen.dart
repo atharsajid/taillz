@@ -25,12 +25,9 @@ class FirstScreen extends StatefulWidget {
 class _FirstScreenState extends State<FirstScreen> {
   final localizationcontroller = Get.find<LocalizationController>();
 
-
   TextEditingController emailcontroller = TextEditingController();
 
   TextEditingController passwordcontroller = TextEditingController();
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -110,8 +107,8 @@ class _FirstScreenState extends State<FirstScreen> {
                 ],
               ),
               Padding(
-                padding:
-                    const EdgeInsets.only(top:15,bottom: 7, left:65,right: 65),
+                padding: const EdgeInsets.only(
+                    top: 15, bottom: 7, left: 65, right: 65),
                 child: Container(
                   height: 45,
                   decoration: BoxDecoration(
@@ -125,7 +122,6 @@ class _FirstScreenState extends State<FirstScreen> {
                       final bool isValid =
                           EmailValidator.validate(emailcontroller.text.trim());
                       if (isValid && passwordcontroller.text.isNotEmpty) {
-                    
                         Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -196,6 +192,7 @@ class _FirstScreenState extends State<FirstScreen> {
                   padding: const EdgeInsets.only(top: 15),
                   child: InkWell(
                     onTap: () {
+                      colorlist.shuffle();
                       Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -240,5 +237,5 @@ class _FirstScreenState extends State<FirstScreen> {
   }
 
   //progress indicatior
- 
+
 }

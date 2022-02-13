@@ -55,6 +55,8 @@ flutter:
 
 
   assets:
+   - assets/icons/female/
+   - assets/icons/male/
    - assets/icons/
    - assets/icons/logo_text.svg
    - assets/images/

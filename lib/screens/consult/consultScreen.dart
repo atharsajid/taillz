@@ -1,6 +1,8 @@
 import 'package:avatar_view/avatar_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
+import 'package:taillz/Localization/localization_service.dart';
 import 'package:taillz/Localization/t_keys.dart';
 import 'package:taillz/commentscreen/commentscreen.dart';
 import 'package:taillz/model/consultModel.dart';
@@ -185,6 +187,7 @@ class ConsultDetailScreen extends StatefulWidget {
 }
 
 class _ConsultDetailScreenState extends State<ConsultDetailScreen> {
+  final localizationcontroller = Get.find<LocalizationController>();
   var list = ["assets/images/bg1.png"];
 
   @override
@@ -293,7 +296,8 @@ class _ConsultDetailScreenState extends State<ConsultDetailScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            margin: EdgeInsets.symmetric(vertical: 5, horizontal: 14),
+            margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+           
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -374,16 +378,22 @@ class _ConsultDetailScreenState extends State<ConsultDetailScreen> {
                 SizedBox(
                   height: 6,
                 ),
-                Text(
-                  "this is a sample story this is a sample\n"
-                  "this is a sample story this is a sample\n"
-                  "this is a sample story this is a sample\n"
-                  "this is a sample story this is a sample\n"
-                  "this is a sample story this is a sample",
-                  style: TextStyle(
-                    fontSize: 13,
-                    fontFamily: Constant.fontFamilyName,
-                    color: Constant.textTitleColor,
+                Padding(
+                   padding: localizationcontroller.directionRTL
+                ? EdgeInsets.only(left: 20)
+                : EdgeInsets.only(right: 20),
+                  child: Text(
+                    "this is a sample story this is a sample "
+                    "this is a sample story this is a sample "
+                    "this is a sample story this is a sample "
+                    "this is a sample story this is a sample "
+                    "this is a sample story this is a sample",
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(
+                      fontSize: 13,
+                      fontFamily: Constant.fontFamilyName,
+                      color: Constant.textTitleColor,
+                    ),
                   ),
                 ),
                 Text(
@@ -521,95 +531,94 @@ class _ConsultDetailScreenState extends State<ConsultDetailScreen> {
   }
 
   Widget userComment() {
-    return Padding(
-      padding: const EdgeInsets.only(left: 7, right: 7, bottom: 25),
-      child: Container(
-        decoration: BoxDecoration(
-            color: Constant.commentBackgroundColor,
-            borderRadius: BorderRadius.circular(8)),
-        child: Padding(
-          padding: const EdgeInsetsDirectional.all(5),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              AvatarView(
-                radius: 16,
-                avatarType: AvatarType.CIRCLE,
-                imagePath: "assets/images/user_profile.png",
-              ),
-              Expanded(
-                flex: 1,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Text(
-                            "Nick name",
-                            style: TextStyle(
-                              fontSize: 14,
-                              color: Constant.textTitleColor,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: Constant.fontFamilyName,
-                            ),
+    return Container(
+      margin: EdgeInsets.only(top: 5),
+      decoration: BoxDecoration(
+          color: Constant.commentBackgroundColor,
+          borderRadius: BorderRadius.circular(8)),
+      child: Padding(
+        padding: const EdgeInsetsDirectional.all(5),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            AvatarView(
+              radius: 16,
+              avatarType: AvatarType.CIRCLE,
+              imagePath: "assets/images/user_profile.png",
+            ),
+            Expanded(
+              flex: 1,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          "Nick name",
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Constant.textTitleColor,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: Constant.fontFamilyName,
                           ),
-                          SizedBox(
-                            width: 4,
-                          ),
-                          Text(
-                            "10/30/2021",
-                            style: TextStyle(
-                              fontSize: 13,
-                              color: Constant.commentDateColor,
-                              fontWeight: FontWeight.normal,
-                              fontFamily: Constant.fontFamilyName,
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 4,
-                      ),
-                      Text(
-                          "This is comment This is comment\n"
-                          "This is comment This is comment\n"
-                          "This is comment This is comment",
+                        ),
+                        SizedBox(
+                          width: 4,
+                        ),
+                        Text(
+                          "10/30/2021",
                           style: TextStyle(
                             fontSize: 13,
-                            color: Constant.userCommentColor,
+                            color: Constant.commentDateColor,
                             fontWeight: FontWeight.normal,
                             fontFamily: Constant.fontFamilyName,
-                          )),
-                      SizedBox(
-                        height: 4,
-                      ),
-                    ],
-                  ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 4,
+                    ),
+                    Text(
+                        "This is comment This is comment "
+                        "This is comment This is comment "
+                        "This is comment This is comment",
+                        textAlign: TextAlign.justify,
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: Constant.userCommentColor,
+                          fontWeight: FontWeight.normal,
+                          fontFamily: Constant.fontFamilyName,
+                        )),
+                    SizedBox(
+                      height: 4,
+                    ),
+                  ],
                 ),
               ),
-              PopupMenuButton<int>(
-                child: Container(
-                  height: 36,
-                  width: 48,
-                  alignment: AlignmentDirectional.centerEnd,
-                  child: Icon(
-                    Icons.more_vert,
-                    color: Constant.vertIconColor,
-                  ),
+            ),
+            PopupMenuButton<int>(
+              child: Container(
+                height: 36,
+                width: 48,
+                alignment: AlignmentDirectional.centerEnd,
+                child: Icon(
+                  Icons.more_vert,
+                  color: Constant.vertIconColor,
                 ),
-                itemBuilder: (context) {
-                  return <PopupMenuEntry<int>>[
-                    PopupMenuItem(
-                        child: Text(TKeys.report_block.translate(context)),
-                        value: 0),
-                  ];
-                },
               ),
-            ],
-          ),
+              itemBuilder: (context) {
+                return <PopupMenuEntry<int>>[
+                  PopupMenuItem(
+                      child: Text(TKeys.report_block.translate(context)),
+                      value: 0),
+                ];
+              },
+            ),
+          ],
         ),
       ),
     );

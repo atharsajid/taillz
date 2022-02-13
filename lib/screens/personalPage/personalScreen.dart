@@ -1,7 +1,9 @@
 import 'package:avatar_view/avatar_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:taillz/Localization/localization_service.dart';
 import 'package:taillz/Localization/t_keys.dart';
 import 'package:taillz/commentscreen/commentscreen.dart';
 import 'package:taillz/screens/mainScreen.dart';
@@ -180,6 +182,7 @@ class PostStory extends StatefulWidget {
 }
 
 class _PostStoryState extends State<PostStory> {
+  final localizationcontroller = Get.find<LocalizationController>();
   var list = ["assets/images/bg1.png"];
 
   @override
@@ -346,7 +349,9 @@ class _PostStoryState extends State<PostStory> {
                   ],
                 ),
                 Padding(
-                  padding: EdgeInsets.only(right: 25),
+                  padding: localizationcontroller.directionRTL
+                      ? EdgeInsets.only(left: 25)
+                      : EdgeInsets.only(right: 25),
                   child: Text(
                     "this is a sample story this is a sample "
                     "this is a sample story this is a sample "

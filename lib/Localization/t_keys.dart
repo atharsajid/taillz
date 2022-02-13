@@ -254,6 +254,11 @@ enum TKeys {
   resetpassword,
   typing,
   minimum_for_post,
+  please_select_reason,
+  hate_speech,
+  spamming_terror,
+  report_and_block,
+  report,
 }
 
 //TKeys.hello

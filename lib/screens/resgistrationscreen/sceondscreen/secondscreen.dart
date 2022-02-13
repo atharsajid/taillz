@@ -6,7 +6,6 @@ import 'package:taillz/Localization/t_keys.dart';
 import 'package:taillz/screens/resgistrationscreen/sceondscreen/components/customnextbutton.dart';
 import 'package:taillz/screens/resgistrationscreen/thirdscreen/thirdscreen.dart';
 
-
 class SecondScreen extends StatefulWidget {
   @override
   State<SecondScreen> createState() => _SecondScreenState();
@@ -52,7 +51,8 @@ class _SecondScreenState extends State<SecondScreen> {
                               MaterialPageRoute(
                                   builder: (context) => ThirdScreen()));
                         } else {
-                          showflushbar(context, TKeys.select_color.translate(context));
+                          showflushbar(
+                              context, TKeys.select_color.translate(context));
                         }
                       },
                     ),
@@ -65,7 +65,7 @@ class _SecondScreenState extends State<SecondScreen> {
               Container(
                 alignment: AlignmentDirectional.topCenter,
                 child: Text(
-                 TKeys.First_What_color_are_you.translate(context),
+                  TKeys.First_What_color_are_you.translate(context),
                   style: GoogleFonts.montserrat(
                     fontSize: 16,
                     color: Color(0xff121556),
@@ -89,9 +89,7 @@ class _SecondScreenState extends State<SecondScreen> {
               SizedBox(
                 height: 40,
               ),
-              Container(
-                height: 500,
-                child: buildBlockPicker()),
+              Container(height: 500, child: buildBlockPicker()),
             ],
           ),
         ),
@@ -101,30 +99,7 @@ class _SecondScreenState extends State<SecondScreen> {
 
   BlockPicker buildBlockPicker() {
     return BlockPicker(
-        availableColors: [
-          Colors.yellow,
-          Colors.blue,
-          Colors.indigo,
-          Colors.brown,
-          Colors.green,
-          Colors.cyan,
-          Colors.amberAccent,
-          Colors.black38,
-          Colors.indigoAccent,
-          Colors.pink,
-          Colors.grey,
-          Colors.purpleAccent,
-          Colors.tealAccent,
-          Colors.deepOrangeAccent,
-          Colors.orange,
-          Colors.red,
-          Colors.deepPurpleAccent,
-          Colors.lightBlueAccent,
-          Colors.yellowAccent,
-          Colors.lightGreen,
-          Colors.amber,
-          Colors.deepOrange
-        ],
+        availableColors: colorlist,
         pickerColor: color,
         onColorChanged: (color) => setState(() {
               this.color = color;
@@ -150,4 +125,26 @@ class _SecondScreenState extends State<SecondScreen> {
       duration: Duration(milliseconds: 1500),
     )..show(context);
   }
+
+ 
 }
+
+List<Color> colorlist = availcolor.toSet().toList();
+List<Color> availcolor = [
+  Color.fromRGBO(197, 29, 20, 0.7),
+  Color.fromRGBO(103, 173, 70, 0.7),
+  Color.fromRGBO(166, 166, 166, 0.7),
+  Color.fromRGBO(221, 119, 11, 0.7),
+  Color.fromRGBO(243, 18, 18, 0.7),
+  Color.fromRGBO(0, 127, 255, 0.7),
+  Color.fromRGBO(88, 160, 161, 0.7),
+  Color.fromRGBO(36, 60, 145, 0.7),
+  Color.fromRGBO(50, 126, 52, 0.7),
+  Color.fromRGBO(191, 157, 25, 0.7),
+  Color.fromRGBO(141, 153, 38, 0.7),
+  Color.fromRGBO(187, 122, 188, 0.7),
+  Color.fromRGBO(0, 255, 74, 0.7),
+  Color.fromRGBO(15, 255, 138, 0.7),
+  Color.fromRGBO(209, 238, 0, 0.7),
+  Color.fromRGBO(255, 0, 222, 0.7),
+];

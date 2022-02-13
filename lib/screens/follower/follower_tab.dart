@@ -18,136 +18,118 @@ class _FollowerTabState extends State<FollowerTab> {
         padding: EdgeInsets.all(20),
         child: Column(
           children: [
-            Row(
-              children: [
-                AvatarView(
-                  radius: 20,
-                  borderWidth: 2,
-                  backgroundColor: Colors.blue,
-                  borderColor: Colors.white,
-                  avatarType: AvatarType.CIRCLE,
-                  imagePath: "assets/images/user_profile.png",
-                ),
-                Padding(
-                  padding: const EdgeInsetsDirectional.only(start: 10),
-                  child: Text(
-                    "Kristin121",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: Constant.fontFamilyName,
-                    ),
-                  ),
-                ),
-                Spacer(),
-                PopupMenuButton<int>(
-                  child: Container(
-                    padding: EdgeInsets.only(right: 25, left: 25),
-                    height: 36,
-                    width: 48,
-                    child: Icon(
-                      Icons.more_vert,
-                      color: Constant.vertIconColor,
-                    ),
-                  ),
-                  itemBuilder: (context) {
-                    return <PopupMenuEntry<int>>[
-                      PopupMenuItem(child: Text(TKeys.remove_follower.translate(context)), value: 0),
-                      PopupMenuItem(child: Text(TKeys.report_block.translate(context)), value: 2),
-                    ];
-                  },
-                ),
-              ],
+            Followers(
+              name: "Kristin121",
+              image: "assets/icons/female/2.png",
             ),
-
-            SizedBox(height: 15,),
-             Row(
-              children: [
-                AvatarView(
-                  radius: 20,
-                  borderWidth: 2,
-                  backgroundColor: Colors.red,
-                  borderColor: Colors.white,
-                  avatarType: AvatarType.CIRCLE,
-                  imagePath: "assets/images/user_profile.png",
-                ),
-                Padding(
-                  padding: const EdgeInsetsDirectional.only(start: 10),
-                  child: Text(
-                    "Jenniffer",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: Constant.fontFamilyName,
-                    ),
-                  ),
-                ),
-                Spacer(),
-                PopupMenuButton<int>(
-                  child: Container(
-                    padding: EdgeInsets.only(right: 25, left: 25),
-                    height: 36,
-                    width: 48,
-                    child: Icon(
-                      Icons.more_vert,
-                      color: Constant.vertIconColor,
-                    ),
-                  ),
-                  itemBuilder: (context) {
-                    return <PopupMenuEntry<int>>[
-                      PopupMenuItem(child: Text(TKeys.remove_follower.translate(context)), value: 0),
-                      PopupMenuItem(child: Text(TKeys.report_block.translate(context)), value: 2),
-                    ];
-                  },
-                ),
-              ],
+            SizedBox(
+              height: 15,
             ),
-            SizedBox(height: 15,),
-
-             Row(
-              children: [
-                AvatarView(
-                  radius: 20,
-                  borderWidth: 2,
-                  backgroundColor: Colors.green,
-                  borderColor: Colors.white,
-                  avatarType: AvatarType.CIRCLE,
-                  imagePath: "assets/images/user_profile.png",
-                ),
-                Padding(
-                  padding: const EdgeInsetsDirectional.only(start: 10),
-                  child: Text(
-                    "Martin1984",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: Constant.fontFamilyName,
-                    ),
-                  ),
-                ),
-                Spacer(),
-                PopupMenuButton<int>(
-                  child: Container(
-                    padding: EdgeInsets.only(right: 25, left: 25),
-                    height: 36,
-                    width: 48,
-                    child: Icon(
-                      Icons.more_vert,
-                      color: Constant.vertIconColor,
-                    ),
-                  ),
-                  itemBuilder: (context) {
-                    return <PopupMenuEntry<int>>[
-                      PopupMenuItem(child: Text(TKeys.remove_follower.translate(context)), value: 0),
-                      PopupMenuItem(child: Text(TKeys.report_block.translate(context)), value: 2),
-                    ];
-                  },
-                ),
-              ],
+            Followers(
+              name: "Jennifer98",
+              image: "assets/icons/female/1.png",
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Followers(
+              name: "Martin896",
+              image: "assets/icons/male/1.png",
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Followers(
+              name: "John1999",
+              image: "assets/icons/male/3.png",
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Followers(
+              name: "Emma567",
+              image: "assets/icons/female/4.png",
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Followers(
+              name: "Robert21",
+              image: "assets/icons/male/5.png",
+            ),SizedBox(
+              height: 15,
+            ),
+            Followers(
+              name: "Alexandra91",
+              image: "assets/icons/female/6.png",
+            ),SizedBox(
+              height: 15,
+            ),
+            Followers(
+              name: "Rayan61",
+              image: "assets/icons/male/7.png",
             ),
           ],
         ),
       ),
+    );
+  }
+}
+
+class Followers extends StatelessWidget {
+  final String image;
+  final String name;
+  const Followers({
+    Key key,
+    this.image,
+    this.name,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        AvatarView(
+          radius: 20,
+          borderWidth: 2,
+          backgroundColor: Colors.blue,
+          borderColor: Colors.white,
+          avatarType: AvatarType.CIRCLE,
+          imagePath: image,
+        ),
+        Padding(
+          padding: const EdgeInsetsDirectional.only(start: 10),
+          child: Text(
+            name,
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+              fontFamily: Constant.fontFamilyName,
+            ),
+          ),
+        ),
+        Spacer(),
+        PopupMenuButton<int>(
+          child: Container(
+            padding: EdgeInsets.only(right: 25, left: 25),
+            height: 36,
+            width: 48,
+            child: Icon(
+              Icons.more_vert,
+              color: Constant.vertIconColor,
+            ),
+          ),
+          itemBuilder: (context) {
+            return <PopupMenuEntry<int>>[
+              PopupMenuItem(
+                  child: Text(TKeys.remove_follower.translate(context)),
+                  value: 0),
+              PopupMenuItem(
+                  child: Text(TKeys.report_block.translate(context)), value: 2),
+            ];
+          },
+        ),
+      ],
     );
   }
 }
