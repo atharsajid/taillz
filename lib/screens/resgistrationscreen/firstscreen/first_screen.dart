@@ -42,8 +42,8 @@ class _FirstScreenState extends State<FirstScreen> {
                 children: [
                   TextButton(
                     onPressed: () {
-                      localizationcontroller.hebLanguage();
                       localizationcontroller.directionRtl();
+                      localizationcontroller.hebLanguage();
                     },
                     child: Text(
                       'עִברִית',
@@ -70,15 +70,17 @@ class _FirstScreenState extends State<FirstScreen> {
                 ],
               ),
               Container(
-                padding: EdgeInsets.only(top: 50),
+                padding: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.height * 0.08),
                 child: Image.asset(
                   'assets/images/LogoIcon.png',
-                  height: 110,
+                  height: MediaQuery.of(context).size.height * 0.15,
                   fit: BoxFit.cover,
                 ),
               ),
               Container(
-                padding: EdgeInsets.only(top: 15),
+                padding: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.height * 0.02),
                 child: Text(
                   TKeys.Anonymous_world.translate(context),
                   style: GoogleFonts.openSans(
@@ -108,9 +110,9 @@ class _FirstScreenState extends State<FirstScreen> {
               ),
               Padding(
                 padding: const EdgeInsets.only(
-                    top: 15, bottom: 7, left: 65, right: 65),
+                    top: 10, bottom: 2, left: 65, right: 65),
                 child: Container(
-                  height: 45,
+                  height: 50,
                   decoration: BoxDecoration(
                     color: Color(0xff121556),
                     borderRadius: BorderRadius.circular(32),
@@ -173,7 +175,7 @@ class _FirstScreenState extends State<FirstScreen> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.symmetric(horizontal: 65, vertical: 7),
+                margin: EdgeInsets.symmetric(horizontal: 65, vertical: 2),
                 height: 50,
                 width: double.infinity,
                 decoration: BoxDecoration(

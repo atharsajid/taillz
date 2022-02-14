@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:taillz/screens/resgistrationscreen/firstscreen/first_screen.dart';
 import 'package:taillz/screens/splash/splashScreen.dart';
 import 'Localization/localization_service.dart';
 

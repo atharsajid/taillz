@@ -1,8 +1,8 @@
 import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:taillz/Localization/t_keys.dart';
+import 'package:taillz/screens/resgistrationscreen/sceondscreen/components/block_picker.dart';
 import 'package:taillz/screens/resgistrationscreen/sceondscreen/components/customnextbutton.dart';
 import 'package:taillz/screens/resgistrationscreen/thirdscreen/thirdscreen.dart';
 
@@ -89,13 +89,17 @@ class _SecondScreenState extends State<SecondScreen> {
               SizedBox(
                 height: 40,
               ),
-              Container(height: 500, child: buildBlockPicker()),
+              Container(
+                  height: MediaQuery.of(context).size.height * 0.45,
+                  child: buildBlockPicker()),
             ],
           ),
         ),
       ),
     );
   }
+
+
 
   BlockPicker buildBlockPicker() {
     return BlockPicker(
@@ -105,6 +109,7 @@ class _SecondScreenState extends State<SecondScreen> {
               this.color = color;
               isSelected = true;
             }));
+            
   }
 //Flushbar widget
 
@@ -125,26 +130,46 @@ class _SecondScreenState extends State<SecondScreen> {
       duration: Duration(milliseconds: 1500),
     )..show(context);
   }
-
- 
 }
 
 List<Color> colorlist = availcolor.toSet().toList();
 List<Color> availcolor = [
-  Color.fromRGBO(197, 29, 20, 0.7),
-  Color.fromRGBO(103, 173, 70, 0.7),
-  Color.fromRGBO(166, 166, 166, 0.7),
-  Color.fromRGBO(221, 119, 11, 0.7),
-  Color.fromRGBO(243, 18, 18, 0.7),
-  Color.fromRGBO(0, 127, 255, 0.7),
-  Color.fromRGBO(88, 160, 161, 0.7),
-  Color.fromRGBO(36, 60, 145, 0.7),
-  Color.fromRGBO(50, 126, 52, 0.7),
-  Color.fromRGBO(191, 157, 25, 0.7),
-  Color.fromRGBO(141, 153, 38, 0.7),
-  Color.fromRGBO(187, 122, 188, 0.7),
-  Color.fromRGBO(0, 255, 74, 0.7),
-  Color.fromRGBO(15, 255, 138, 0.7),
-  Color.fromRGBO(209, 238, 0, 0.7),
-  Color.fromRGBO(255, 0, 222, 0.7),
+  Color.fromRGBO(113, 117, 122, 0.8),
+  Color.fromRGBO(122, 61, 103, 0.8),
+  Color.fromRGBO(157, 135, 32, 0.8),
+  Color.fromRGBO(82, 83, 9, 0.8),
+  Color.fromRGBO(197, 29, 20, 0.8),
+  Color.fromRGBO(103, 173, 70, 0.8),
+  Color.fromRGBO(166, 166, 166, 0.8),
+  Color.fromRGBO(221, 119, 11, 0.8),
+  Color.fromRGBO(243, 18, 18, 0.8),
+  Color.fromRGBO(0, 127, 255, 0.8),
+  Color.fromRGBO(88, 160, 161, 0.8),
+  Color.fromRGBO(36, 60, 145, 0.8),
+  Color.fromRGBO(50, 126, 52, 0.8),
+  Color.fromRGBO(191, 157, 25, 0.8),
+  Color.fromRGBO(141, 153, 38, 0.8),
+  Color.fromRGBO(187, 122, 188, 0.8),
+  Color.fromRGBO(0, 255, 74, 0.8),
+  Color.fromRGBO(15, 255, 138, 0.8),
+  Color.fromRGBO(209, 238, 0, 0.8),
+  Color.fromRGBO(255, 0, 222, 0.8),
+  Color.fromRGBO(17, 129, 20, 0.8),
+  Color.fromRGBO(133, 153, 70, 0.8),
+  Color.fromRGBO(146, 116, 166, 0.8),
+  Color.fromRGBO(21, 189, 11, 0.8),
+  Color.fromRGBO(255, 255, 0, 0.7),
+  Color.fromRGBO(0, 255, 255, 0.7),
+  Color.fromRGBO(255, 0, 0, 0.7),
+  Color.fromRGBO(0, 0, 255, 0.7),
+  Color.fromRGBO(0, 128, 128, 0.7),
+  Color.fromRGBO(128, 0, 0, 0.7),
+  Color.fromRGBO(255, 215, 0, 0.7),
+  Color.fromRGBO(184, 134, 11, 0.7),
+  Color.fromRGBO(220, 20, 60, 0.7),
+  Color.fromRGBO(255, 99, 71, 0.7),
+  Color.fromRGBO(255, 165, 0, 0.7),
+  Color.fromRGBO(0, 191, 255, 0.7),
+  Color.fromRGBO(148, 0, 211, 0.7),
+  Color.fromRGBO(255, 20, 147, 0.7),
 ];
